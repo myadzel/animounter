@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Animated counter</title>
+    <script src="../animounter.js"></script>
+</head>
+<body>
+Click document to change counter.
+
+<div id="counter" style="font-size: 40px; font-family: arial; text-align: center; margin: 10%">0</div>
+
+<script>
+    function rand(min, max) {
+        return Math.floor((max - min + 1) * Math.random() + min);
+    }
+
+    window.onload = function () {
+        var counterElement = document.getElementById("counter");
+
+        var counter = new Animounter(counterElement, {
+            value: 100,
+            duration: 550
+        });
+
+        counter.render();
+
+        document.onclick = function () {
+            counter.change(rand(0, 100));
+        };
+    };
+</script>
+</body>
+</html>
