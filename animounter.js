@@ -68,7 +68,7 @@ Animounter.prototype = {
     },
 
     getDelay: function () {
-        return this.durationLeft / Math.abs(this.currentValue - this.nextValue);
+        return this.durationLeft / this.getAbsoluteDifference();
     },
 
     update: function () {
