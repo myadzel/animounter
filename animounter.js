@@ -41,8 +41,12 @@ Animounter.prototype = {
         this.render();
     },
 
+    getOnePercentOfDuration: function () {
+        return this.duration / 100;
+    },
+
     getOffsetAbsoluteValue: function () {
-        return Math.floor(this.getAbsoluteDifference() / (this.duration / 100)) || 1;
+        return Math.floor(this.getAbsoluteDifference() / this.getOnePercentOfDuration()) || 1;
     },
 
     getOffsetValue: function () {
